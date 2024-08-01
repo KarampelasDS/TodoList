@@ -64,7 +64,10 @@ input[type="text"]{
     padding: 10px;
     border: 2px solid hsla(0,0%,80%, 0.5);
     border-radius: 5px;
-    color: hsla(0,0%,0%,0.5)
+    color: hsla(0,0%,0%,0.5);
+    flex: 1; /* Allows input to grow and shrink */
+    min-width: 0; /* Ensures input can shrink below its content size */
+    max-width: 20rem;
 }
 
 ol{
@@ -106,7 +109,50 @@ li{
 }
 
 .char-counter{
-    color: white;
-    position: relative;
-    right:180px
+    margin-left: 0; /* Removes left margin for small screens */
+    margin-top: 10px; /* Adds top margin for better spacing */
+    text-align: center; /* Centers text on small screens */
+    width: 100%;
 }
+
+.Heading{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .delete-button{
+      margin-left: 0px;
+      scale: 0.6;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .move-button{
+      margin-left: 0px;
+      scale: 0.6;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .vertical-line{
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    li{
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 2px;
+        background-color: hsl(0,0%,97%);
+        margin-bottom: 1px;
+        border: 3px solid hsl(0,0%,85%,0.75);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+    }
+  }
